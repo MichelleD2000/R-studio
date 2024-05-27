@@ -1,0 +1,29 @@
+attach(Prestige_New)
+# Load the dataset
+occupations_data <- read.csv("Prestige_New.csv")
+
+# View the structure of the dataset
+str(occupations_data)
+
+# Summary statistics of the dataset
+summary(occupations_data)
+
+# Calculate Measures of Income
+min_income <- min(occupations_data$income)
+max_income <- max(occupations_data$income)
+mean_income <- mean(occupations_data$income)
+median_income <- median(occupations_data$income)
+
+# Install and load the DescTools package for mode calculation
+install.packages("DescTools")
+library(DescTools)
+
+# Calculate mode of income
+mode_income <- Mode(occupations_data$income)
+
+# Print Results
+cat("Minimum Income:", min_income, "\n")
+cat("Maximum Income:", max_income, "\n")
+cat("Mean Income:", mean_income, "\n")
+cat("Median Income:", median_income, "\n")
+cat("Mode of Income:", mode_income, "\n")
